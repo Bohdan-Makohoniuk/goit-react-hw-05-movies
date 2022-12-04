@@ -3,14 +3,15 @@ import { getMovieById } from 'servies/api';
 import { useState, useEffect } from 'react';
 
 
-const baseUrl ='http://image.tmdd.org/t/p/w500/'
+const baseUrl = 'https://image.tmdb.org/t/p/w500/';
 
 export const MovieDetails = () => {
-    const { movieId } = useParams();
+    const { movieID } = useParams();
+    console.log(MovieDetails);
     const [movie, setMovie] = useState(null);
     useEffect(() => {
-        getMovieById(movieId).then(setMovie);
-    }, [movieId]);
+        getMovieById(movieID).then(setMovie);
+    }, [movieID]);
 
     if (!movie) {
         return;
@@ -19,7 +20,7 @@ export const MovieDetails = () => {
     return (
         <div>
             <h2>{movie.title}</h2>
-            <img src={`${baseUrl+ movie.poster.path}`} alt={movie.title} />
+            <img src={`${baseUrl + movie.poster_path}`} alt={movie.title} />
             <p>Overview:{movie.overview}</p>
         </div>
     );
