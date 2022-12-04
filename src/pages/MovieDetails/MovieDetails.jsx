@@ -7,8 +7,9 @@ const baseUrl = 'https://image.tmdb.org/t/p/w500/';
 
 export const MovieDetails = () => {
     const { movieID } = useParams();
-    console.log(MovieDetails);
+    // console.log(MovieDetails);
     const [movie, setMovie] = useState(null);
+    // console.log(movie);
     useEffect(() => {
         getMovieById(movieID).then(setMovie);
     }, [movieID]);
