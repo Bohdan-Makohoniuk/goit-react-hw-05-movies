@@ -12,11 +12,16 @@ export const getTrendingMovies = async () => {
 
 
 // movie details
-export const getMovieById = async (movieId) => {
+export const getMovieById = async (movieID) => {
     const res = await axios
-        .get(`/movie/${movieId}?api_key=${KEY}`)
+        .get(`/movie/${movieID}?api_key=${KEY}`)
         .catch(error => {
             throw new Error('Oops... seems like an error occured.');
         });
     return res.data;
+}
+
+export const getMoviesdByQuery = async query => {
+    const res = await axios.get(`search/movie?api_key=${KEY}&query=${query}&language=en-US&page=1&include_adult=false`)
+    return res.data.results;
 }
