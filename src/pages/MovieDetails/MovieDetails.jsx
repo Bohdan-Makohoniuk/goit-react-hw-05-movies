@@ -9,14 +9,14 @@ const baseUrl = 'https://image.tmdb.org/t/p/w500/';
 export const MovieDetails = () => {
     const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
-  const { movieID } = useParams();
+//   console.log(location);
+  const { movieId } = useParams();
   // console.log(MovieDetails);
   const [movie, setMovie] = useState(null);
   // console.log(movie);
   useEffect(() => {
-    getMovieById(movieID).then(setMovie);
-  }, [movieID]);
+    getMovieById(movieId).then(setMovie);
+  }, [movieId]);
     
     
     const handleGoBack = () => {
@@ -35,8 +35,8 @@ export const MovieDetails = () => {
         <img src={`${baseUrl + movie.poster_path}`} alt={movie.title} />
         <p>Overview:{movie.overview}</p>
           </div>
-          <Link to='/cast' >Cast</Link>
-          <Link to='/reviews' >Reviews</Link>
+          <Link to='cast'>Cast</Link>
+          <Link to='reviews'>Reviews</Link>
           <Outlet/>
     </>
   );
