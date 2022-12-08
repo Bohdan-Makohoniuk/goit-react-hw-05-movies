@@ -28,6 +28,7 @@ export const Movies = () => {
 
   return (
     <div>
+      
       <form onSubmit={handleSubmit}>
         <input
           type="text"
