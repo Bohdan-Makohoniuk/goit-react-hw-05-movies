@@ -1,6 +1,9 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { getActors } from "servies/api";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getActors } from 'servies/api';
+import { CastItem, CastList } from './Cast.styled';
+
+
 
 
 export const Cast = () => {
@@ -12,15 +15,15 @@ export const Cast = () => {
         getActors(movieId).then(setCast);
     }, [movieId]);
 
-    if (cast.length === 0) {
+    if (!cast) {
     return;
   }
     
 
 
-    return (<div>
-        <ul>
-            {cast.map(actor => (<li key={actor.id} >{actor.name}</li>))}
-        </ul>
-    </div>);
+    return (
+        <CastList>
+            {cast.map(actor => (<CastItem key={actor.id} >{actor.name}</CastItem>))}
+        </CastList>
+);
 };

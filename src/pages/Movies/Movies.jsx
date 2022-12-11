@@ -2,7 +2,7 @@
 import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMoviesdByQuery } from 'servies/api';
-
+import { Input, Btn, Form } from './Movies.styled';
 import { Movieslist } from 'components/MoviesList/MoviesList';
 
 export const Movies = () => {
@@ -30,15 +30,15 @@ export const Movies = () => {
   return (
     <div>
       
-      <form onSubmit={handleSubmit}>
-        <input
+      <Form onSubmit={handleSubmit}>
+        <Input
           type="text"
           name="movies"
           onChange={handleChange}
           value={query}
         />
-        <button type="submit">Serch</button>
-      </form>
+        <Btn type="submit">Serch</Btn>
+      </Form>
       <Movieslist movies={movies} />
     </div>
   );

@@ -31,7 +31,6 @@ export const getMoviesdByQuery = async query => {
 export const getActors = async moviId => {
   
   const res = await axios.get(`movie/${moviId}/credits?api_key=${KEY}&language=en-US`)
-  console.log(res);
   return res.data.cast;
 };
 
