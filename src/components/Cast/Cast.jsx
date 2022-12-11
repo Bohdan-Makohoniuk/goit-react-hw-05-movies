@@ -5,12 +5,11 @@ import { getActors } from "servies/api";
 
 export const Cast = () => {
     const [cast, setCast] = useState([]);
-    const [movieId] = useParams();
+    const {movieId} = useParams();
  
 
     useEffect(() => {
-        getActors(movieId).then(data => { console.log(data)});
-        // getActors(movieId).then(setCast);
+        getActors(movieId).then(setCast);
     }, [movieId]);
 
     if (cast.length === 0) {
@@ -20,9 +19,8 @@ export const Cast = () => {
 
 
     return (<div>
-        <h2>Cast</h2>
-        {/* <ul>
+        <ul>
             {cast.map(actor => (<li key={actor.id} >{actor.name}</li>))}
-        </ul> */}
+        </ul>
     </div>);
 };
