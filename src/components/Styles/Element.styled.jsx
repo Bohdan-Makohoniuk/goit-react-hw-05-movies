@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 const SearchBox = styled.div``;
 
 const Form = styled.form`
@@ -19,9 +18,9 @@ const Input = styled.input`
   display: inline-block;
   width: 100%;
   font: inherit;
-  margin-top: 20px;
-  margin-bottom: 20px;
   font-size: 16px;
+  // border: none;
+  // outline: none;
   padding: 4px;
   &::placeholder {
     font: inherit;
@@ -46,9 +45,9 @@ const ButtonIcon = styled.button`
   }
 `;
 
-const Btn = styled.button`
+const Button = styled.button`
   padding: 8px 16px;
-  /* margin-top: ${p => p.theme.space[4]}px; */
+  margin-top: ${p => p.theme.space[4]}px;
   border: none;
   border-radius: 15px;
   background-color: #3f51b5;
@@ -98,4 +97,4 @@ const GalleryItem = styled.li`
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 `;
 
-export { SearchBox, P, Form, ButtonIcon, Input, Btn, Gallery, GalleryItem };
+export { SearchBox, P, Form, ButtonIcon, Input, Button, Gallery, GalleryItem };

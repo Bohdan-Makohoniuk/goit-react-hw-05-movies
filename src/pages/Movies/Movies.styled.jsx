@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export const Input = styled.input`
   display: inline-block;
-  width: 30%;
+  width: 50%;
   font: inherit;
   border:none;
   border-bottom:1px solid rgba(0, 0, 0, 0.2);

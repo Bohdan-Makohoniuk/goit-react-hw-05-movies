@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviews } from 'servies/api';
+import {RevievsList, RevievsItem, Author, Content} from './Revievs.styled'
+
 
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -16,15 +18,15 @@ export const Reviews = () => {
 
   return (
     <div>
-      <ul>
+      <RevievsList>
         {<p>There is no reviews yet</p> ||
           reviews.map(review => (
-            <li key={review.id}>
-              <p> Author: {review.author}</p>
-              <span>{review.content}</span>
-            </li>
+            <RevievsItem key={review.id}>
+              <Author> Author: {review.author}</Author>
+              <Content>{review.content}</Content>
+            </RevievsItem>
           ))}
-      </ul>
+      </RevievsList>
     </div>
   );
 };
