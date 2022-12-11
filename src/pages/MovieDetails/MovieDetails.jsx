@@ -35,8 +35,8 @@ export const MovieDetails = () => {
         <img src={`${baseUrl + movie.poster_path}`} alt={movie.title} />
         <p>Overview:{movie.overview}</p>
           </div>
-          <Link to='cast'>Cast</Link>
-          <Link to='reviews'>Reviews</Link>
+          <Link to='cast' state={location.state} >Cast</Link>
+          <Link to='reviews'state={location.state} >Reviews</Link>
           <Outlet/>
     </>
   );

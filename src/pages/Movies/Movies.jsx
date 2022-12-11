@@ -12,9 +12,10 @@ export const Movies = () => {
 
   const handleChange = e => {
     setQuery(e.target.value);
-    setSerchParams({ query });
+    // setSerchParams({ query });
   };
   const handleSubmit = e => {
+    setSerchParams({ query });
     e.preventDefault();
   };
   useEffect(() => {
@@ -22,7 +23,7 @@ export const Movies = () => {
       if (!query) {
           return;
       }
-    console.log(query);
+    // console.log(query);
     getMoviesdByQuery(query).then(setMovies);
   }, [serchParams]);
 
