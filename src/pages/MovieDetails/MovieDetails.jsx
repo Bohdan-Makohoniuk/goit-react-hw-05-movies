@@ -3,6 +3,7 @@ import { getMovieById } from 'servies/api';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { Btn } from './MovieDetails.styled';
 
 const baseUrl = 'https://image.tmdb.org/t/p/w500/';
 
@@ -29,7 +30,7 @@ export const MovieDetails = () => {
 
   return (
     <>
-      <button type ='button' onClick={handleGoBack} >Go back</button>
+      <Btn type ='button' onClick={handleGoBack} >Go back</Btn>
       <div>
         <h2>{movie.title}</h2>
         <img src={`${baseUrl + movie.poster_path}`} alt={movie.title} />
