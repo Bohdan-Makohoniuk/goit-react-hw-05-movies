@@ -19,8 +19,6 @@ const Input = styled.input`
   width: 100%;
   font: inherit;
   font-size: 16px;
-  // border: none;
-  // outline: none;
   padding: 4px;
   &::placeholder {
     font: inherit;
