@@ -15,6 +15,7 @@ export const MovieList = styled.ul`
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  list-style: none;
 `;
 
 export const Title = styled.h2`

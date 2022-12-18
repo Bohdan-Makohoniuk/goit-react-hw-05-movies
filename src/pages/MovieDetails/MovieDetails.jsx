@@ -31,13 +31,14 @@ const MovieDetails = () => {
     getMovieById(movieId).then(data => setMovie(data));
   }, [movieId]);
 
-  const { original_title, overview, genres, poster_path, vote_average } = movie;
-  const score = vote_average * 10;
-  const scoreToFixed = score.toFixed(2);
+  
 
   if (!movie) {
     return;
   }
+  const { original_title, overview, genres, poster_path, vote_average } = movie;
+  const score = vote_average * 10;
+  const scoreToFixed = score.toFixed(2);
 
   return (
     <main>

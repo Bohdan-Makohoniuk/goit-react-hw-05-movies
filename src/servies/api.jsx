@@ -21,11 +21,17 @@ export const getMovieById = async (movieId) => {
     return res.data;
 }
 
-export const getMoviesdByQuery = async query => {
-    const res = await axios.get(`search/movie?api_key=${KEY}&query=${query}&language=en-US&page=1&include_adult=false`)
-    return res.data.results;
-}
+// export const getMoviesdByQuery = async query => {
+//     const res = await axios.get(`search/movie?api_key=${KEY}&query=${query}&language=en-US&page=1&include_adult=false`)
+//     return res.data.results;
+// }
 
+export const getMoviesdByQuery = async query => {
+  const response = await axios.get(
+    `search/movie?api_key=${KEY}&language=en-US&query=${query}&page=1&include_adult=false`
+  );
+  return response.data;
+};
 
 
 export const getActors = async moviId => {
