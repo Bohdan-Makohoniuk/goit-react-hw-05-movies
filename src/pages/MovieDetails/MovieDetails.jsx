@@ -3,20 +3,22 @@ import { getMovieById } from 'servies/api';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
-import { Button,
+import {
+  Button,
   GenresList,
   InfoBox,
   LinkBack,
   MovieBox,
   MovieInfo,
-  Title } from './MovieDetails.styled';
+  Title,
+} from './MovieDetails.styled';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 // const baseUrl = 'https://image.tmdb.org/t/p/w500/';
 
- const MovieDetails = () => {
-    // const navigate = useNavigate();
+const MovieDetails = () => {
+  // const navigate = useNavigate();
   const location = useLocation();
-//   console.log(location);
+  //   console.log(location);
   const { movieId } = useParams();
   // console.log(MovieDetails);
   const [movie, setMovie] = useState(null);
@@ -24,27 +26,21 @@ import { HiArrowNarrowLeft } from 'react-icons/hi';
   useEffect(() => {
     getMovieById(movieId).then(setMovie);
   }, [movieId]);
-    
 
-
-   useEffect(() => {
+  useEffect(() => {
     getMovieById(movieId).then(data => setMovie(data));
   }, [movieId]);
 
-  const { original_title, overview, genres, poster_path, vote_average } =
-    movie;
+  const { original_title, overview, genres, poster_path, vote_average } = movie;
   const score = vote_average * 10;
   const scoreToFixed = score.toFixed(2);
-   
-   
-   
-   
+
   if (!movie) {
     return;
   }
 
   return (
-   <main>
+    <main>
       <Button type="button">
         <LinkBack to={location.state?.from ?? '/'}>
           <HiArrowNarrowLeft size={16} />
@@ -99,8 +95,8 @@ import { HiArrowNarrowLeft } from 'react-icons/hi';
 
 export default MovieDetails;
 
- <>
-      {/* <Btn type ='button' onClick={handleGoBack} >Go back</Btn>
+<>
+  {/* <Btn type ='button' onClick={handleGoBack} >Go back</Btn>
       <div>
         <h2>{movie.title}</h2>
         <img src={`${baseUrl + movie.poster_path}`} alt={movie.title} />
@@ -109,4 +105,4 @@ export default MovieDetails;
           <Link to='cast' state={location.state} >Cast</Link>
           <Link to='reviews'state={location.state} >Reviews</Link>
           <Outlet/> */}
-    </>
+</>;
